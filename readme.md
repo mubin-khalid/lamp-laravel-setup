@@ -75,7 +75,7 @@ In original guide, required Modules for `Laravel` are missing. Guide contains so
 instead, we're going to install `PHP 7.2` with all the Modules that `Laravel` requires.
 
 ```
-sudo apt install php7.2 libapache2-mod-php7.2 php7.2-mbstring php7.2-xmlrpc php7.2-soap php7.2-gd php7.2-xml php7.2-cli php7.2-zip php-mysql
+sudo apt install php7.2 libapache2-mod-php7.2 php7.2-mbstring php7.2-xmlrpc php7.2-soap php7.2-gd php7.2-xml php7.2-cli php7.2-zip php-mysql php-curl
 
 ```
 
@@ -155,8 +155,10 @@ Save the file and exit(hit `esc` then type `:wq` and hit `Enter`).
 ## Step 6: Enable the Laravel and Rewrite Module
 
 ```
+sudo a2dissite 000-default.conf
 sudo a2ensite laravel.conf
 sudo a2enmod rewrite
+sudo service apache2 restart
 ```
 
 ## Step 7: Restart Apache
